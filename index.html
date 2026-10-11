@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rodd Santomauro — Trial Lawyer, Legal Consultant, Author, Speaker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --accent: #34D399;
+    --navy-deep: #081326;
+    --navy: #0B1A33;
+    --ivory: #F7F5F0;
+    --ink: #10192B;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    background: var(--ivory);
+    color: var(--ink);
+    width: 100%;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  @keyframes revealUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes marqueeScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .reveal { transition: opacity 0.7s cubic-bezier(.22,.61,.36,1), transform 0.7s cubic-bezier(.22,.61,.36,1); }
+  .js-ready .reveal { opacity: 0; transform: translateY(22px); }
+  .js-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+  .hero-line { opacity: 0; animation: revealUp 0.9s cubic-bezier(.22,.61,.36,1) forwards; }
+
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 100%;
+    bottom: -4px;
+    height: 1px;
+    background: currentColor;
+    transition: right 0.3s ease;
+  }
+  .nav-link:hover::after { right: 0; }
+
+  .btn-primary { transition: transform 0.25s ease; display: inline-block; }
+  .btn-primary:hover { transform: translateY(-2px); }
+
+  .card-hover { transition: transform 0.3s ease, border-color 0.3s ease; }
+  .card-hover:hover { transform: translateY(-4px); }
+
+  .step-num {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 15px;
+    color: var(--accent);
+    border: 1px solid rgba(52,211,153,0.4);
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .marquee-track { display: flex; width: max-content; animation: marqueeScroll 34s linear infinite; }
+  .marquee-wrap { position: relative; overflow: hidden; }
+  .marquee-fade {
+    position: absolute; top: 0; bottom: 0; width: 120px; pointer-events: none; z-index: 2;
+  }
+  .marquee-fade.left  { left: 0;  background: linear-gradient(90deg, var(--navy-deep), transparent); }
+  .marquee-fade.right { right: 0; background: linear-gradient(270deg, var(--navy-deep), transparent); }
+
+  .footer-name {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(30px, 7vw, 108px);
+    color: #F3F6FA;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; }
+    .hero-line { animation: none; opacity: 1; transform: none; }
+    .js-ready .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<div id="page-root">
+
+  <!-- NAV -->
+  <div style="position: sticky; top: 0; z-index: 50; background: rgba(8,19,38,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.08);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 22px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+      <div style="font-family: 'Newsreader', Georgia, serif; font-size: 22px; letter-spacing: 0.01em; color: #F3F6FA;">Rodd&nbsp;Santomauro</div>
+      <nav style="display: flex; flex-wrap: wrap; gap: 28px; align-items: center;">
+        <a class="nav-link" href="#about" style="font-size: 14px; font-weight: 600; color: #C8D1DE;">About</a>
+        <a class="nav-link" href="#expertise" style="font-size: 14px; font-weight: 600; color: #C8D1DE;">Trial &amp; Consulting</a>
+        <a class="nav-link" href="#speaking" style="font-size: 14px; font-weight: 600; color: #C8D1DE;">Speaking</a>
+        <a class="nav-link" href="#writing" style="font-size: 14px; font-weight: 600; color: #C8D1DE;">Writing</a>
+        <a href="#contact" class="btn-primary" style="background: var(--accent); color: #081326; font-weight: 700; font-size: 14px; padding: 10px 20px; border-radius: 2px;">Get in Touch</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div style="background: var(--navy-deep); position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -120px; right: -120px; width: 420px; height: 420px; border: 1px solid rgba(255,255,255,0.06); border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: -180px; right: 120px; width: 300px; height: 300px; border: 1px solid rgba(255,255,255,0.05); border-radius: 50%;"></div>
+
+    <div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px 0; position: relative;">
+      <div class="hero-line" style="animation-delay: 0s; display: inline-flex; align-items: center; gap: 10px; background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); padding: 7px 16px; border-radius: 999px; margin-bottom: 36px;">
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent);"></span>
+        <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent);">Available for Trial Work, Consulting &amp; Speaking</span>
+      </div>
+    </div>
+
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px 100px; position: relative; display: flex; flex-wrap: wrap; gap: 64px; align-items: center;">
+      <div style="flex: 999 1 480px; min-width: 0;">
+        <h1 style="margin: 0 0 26px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(36px, 4.6vw, 58px); line-height: 1.08; color: #F3F6FA; letter-spacing: -0.01em;">
+          <span class="hero-line" style="animation-delay: 0.15s; display: block;">33 years advocating</span>
+          <span class="hero-line" style="animation-delay: 0.3s; display: block;">for plaintiffs,<span style="color: var(--accent);"> not excuses.</span></span>
+        </h1>
+        <p class="hero-line" style="animation-delay: 0.45s; font-size: 18px; line-height: 1.6; color: #A9B6C9; max-width: 540px; margin: 0 0 40px;">
+          Trial lawyer, legal consultant, nationally published author, and speaker. Admitted in five jurisdictions, including the United States Supreme Court Bar. Former CEO of a 20,000-member legal advocacy organization. Now VP of Strategic Partnerships at Synergy.
+        </p>
+        <div class="hero-line" style="animation-delay: 0.6s; display: flex; flex-wrap: wrap; gap: 16px;">
+          <a href="#contact" class="btn-primary" style="background: var(--accent); color: #081326; font-weight: 700; font-size: 15px; padding: 15px 28px; border-radius: 2px;">Schedule a Consultation</a>
+          <a href="#speaking" class="nav-link btn-primary" style="border: 1px solid rgba(255,255,255,0.22); color: #F3F6FA; font-weight: 600; font-size: 15px; padding: 15px 28px; border-radius: 2px;">Book Rodd to Speak</a>
+        </div>
+      </div>
+
+      <div class="hero-line" style="animation-delay: 0.3s; flex: 1 1 280px; min-width: 240px; max-width: 360px;">
+        <img src="assets/rodd-1.jpeg" alt="Rodd Santomauro" style="width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top center; border-radius: 2px; border: 1px solid rgba(255,255,255,0.1);">
+      </div>
+    </div>
+  </div>
+
+  <!-- STORY CALLOUT -->
+  <div style="background: var(--navy);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 88px 32px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center;">
+      <div class="reveal" style="flex: 1 1 320px; min-width: 260px; max-width: 420px;">
+        <img src="assets/rodd-3.jpeg" alt="Rodd Santomauro" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top center; border-radius: 2px; border: 1px solid rgba(255,255,255,0.1);">
+      </div>
+      <div class="reveal" style="flex: 999 1 400px; min-width: 0;">
+        <p style="margin: 0 0 20px; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-style: italic; font-size: clamp(22px, 2.6vw, 29px); line-height: 1.5; color: #F3F6FA;">
+          "Rodd became an equity partner the day he was sworn in as an attorney, and spent the decades since trying cases for plaintiffs, arguing from county courts up to the United States Supreme Court."
+        </p>
+        <p style="font-size: 15px; line-height: 1.7; color: #8392A8; margin: 0;">
+          No inherited book of business. No slow climb through the ranks. Just a trial record built case by case, and a reputation that eventually reached Washington.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BY THE NUMBERS -->
+  <div style="background: var(--navy-deep); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px;">
+      <div class="reveal" style="text-align: center; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6F7E95; margin-bottom: 44px;">Rodd, by the numbers</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 36px;">
+        <div class="reveal" style="text-align: center;">
+          <div style="font-family: 'Newsreader', Georgia, serif; font-size: 44px; color: var(--accent); line-height: 1;">33</div>
+          <div style="margin-top: 10px; font-size: 14px; color: #A9B6C9;">Years in plaintiff personal injury law</div>
+        </div>
+        <div class="reveal" style="transition-delay: 0.08s; text-align: center;">
+          <div style="font-family: 'Newsreader', Georgia, serif; font-size: 44px; color: var(--accent); line-height: 1;">5</div>
+          <div style="margin-top: 10px; font-size: 14px; color: #A9B6C9;">Jurisdictions admitted, incl. the U.S. Supreme Court Bar</div>
+        </div>
+        <div class="reveal" style="transition-delay: 0.16s; text-align: center;">
+          <div style="font-family: 'Newsreader', Georgia, serif; font-size: 44px; color: var(--accent); line-height: 1;">19</div>
+          <div style="margin-top: 10px; font-size: 14px; color: #A9B6C9;">Articles published in legal publications nationwide</div>
+        </div>
+        <div class="reveal" style="transition-delay: 0.24s; text-align: center;">
+          <div style="font-family: 'Newsreader', Georgia, serif; font-size: 44px; color: var(--accent); line-height: 1;">20K</div>
+          <div style="margin-top: 10px; font-size: 14px; color: #A9B6C9;">Members of the advocacy org he led as CEO</div>
+        </div>
+        <div class="reveal" style="transition-delay: 0.32s; text-align: center;">
+          <div style="font-family: 'Newsreader', Georgia, serif; font-size: 44px; color: var(--accent); line-height: 1;">2</div>
+          <div style="margin-top: 10px; font-size: 14px; color: #A9B6C9;">Honors: Outstanding Alumni &amp; Dean's Achievement Award</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about" style="background: var(--ivory);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 72px;">
+      <div style="flex: 1 1 260px; min-width: 220px; max-width: 320px;">
+        <img src="assets/rodd-2.png" alt="Rodd Santomauro" style="width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top center; border-radius: 2px; border: 1px solid #E4DECE;">
+      </div>
+      <div class="reveal" style="flex: 999 1 420px; min-width: 0;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #8A6D3A; margin-bottom: 18px;">About Rodd</div>
+        <h2 style="margin: 0 0 28px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(28px, 3.2vw, 38px); line-height: 1.2; color: var(--ink);">
+          A plaintiff's advocate first. A strategist for the rest of his career.
+        </h2>
+        <p style="font-size: 17px; line-height: 1.75; color: #3E4654; margin: 0 0 20px;">
+          Rodd became an equity partner the day he was sworn in as an attorney, and spent the next three decades trying cases for plaintiffs in personal injury law, arguing before courts from county level up to the United States Supreme Court.
+        </p>
+        <p style="font-size: 17px; line-height: 1.75; color: #3E4654; margin: 0 0 20px;">
+          He went on to serve as CEO of HALT, a 20,000-member national legal advocacy organization based in Washington, DC, leading pro-consumer legal reform that drew national coverage in the Wall Street Journal, the Des Moines Register, and other major outlets.
+        </p>
+        <p style="font-size: 17px; line-height: 1.75; color: #3E4654; margin: 0 0 32px;">
+          Today, as Vice President of Strategic Partnerships at Synergy, he brings that trial and advocacy background to legal consulting and lien resolution, work most consultants approach only from the outside looking in.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+          <span style="font-size: 13px; font-weight: 600; color: #5B4E35; background: #EFE6CF; padding: 8px 16px; border-radius: 2px;">Outstanding Alumni Award</span>
+          <span style="font-size: 13px; font-weight: 600; color: #5B4E35; background: #EFE6CF; padding: 8px 16px; border-radius: 2px;">Inaugural Dean's Achievement Award</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE PATH -->
+  <div style="background: var(--navy);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 110px 32px;">
+      <div class="reveal" style="max-width: 600px; margin-bottom: 64px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px;">The Path</div>
+        <h2 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(28px, 3.2vw, 38px); line-height: 1.2; color: #F3F6FA;">
+          From a county courtroom to Washington, and back to the work.
+        </h2>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div class="reveal" style="display: flex; gap: 28px; padding: 28px 0; border-top: 1px solid rgba(255,255,255,0.08);">
+          <div style="flex: 0 0 180px; font-family: 'Newsreader', Georgia, serif; font-style: italic; color: #6F7E95; font-size: 15px;">Admitted to the Bar</div>
+          <div style="flex: 1 1 auto; color: #C8D1DE; font-size: 16px; line-height: 1.6;">Sworn in as an attorney and made equity partner the same day, an unusually fast start built on trial work, not tenure.</div>
+        </div>
+        <div class="reveal" style="transition-delay: 0.08s; display: flex; gap: 28px; padding: 28px 0; border-top: 1px solid rgba(255,255,255,0.08);">
+          <div style="flex: 0 0 180px; font-family: 'Newsreader', Georgia, serif; font-style: italic; color: #6F7E95; font-size: 15px;">33 Years at Trial</div>
+          <div style="flex: 1 1 auto; color: #C8D1DE; font-size: 16px; line-height: 1.6;">Three decades representing plaintiffs in personal injury law, admitted across 5 jurisdictions, with multiple appearances before the United States Supreme Court.</div>
+        </div>
+        <div class="reveal" style="transition-delay: 0.16s; display: flex; gap: 28px; padding: 28px 0; border-top: 1px solid rgba(255,255,255,0.08);">
+          <div style="flex: 0 0 180px; font-family: 'Newsreader', Georgia, serif; font-style: italic; color: #6F7E95; font-size: 15px;">CEO, HALT</div>
+          <div style="flex: 1 1 auto; color: #C8D1DE; font-size: 16px; line-height: 1.6;">Led a 20,000-member national legal advocacy organization in Washington, DC, driving pro-consumer reform covered by the Wall Street Journal and the Des Moines Register.</div>
+        </div>
+        <div class="reveal" style="transition-delay: 0.24s; display: flex; gap: 28px; padding: 28px 0; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08);">
+          <div style="flex: 0 0 180px; font-family: 'Newsreader', Georgia, serif; font-style: italic; color: var(--accent); font-size: 15px;">Today</div>
+          <div style="flex: 1 1 auto; color: #F3F6FA; font-size: 16px; line-height: 1.6;">VP of Strategic Partnerships at Synergy, bringing that trial and advocacy perspective to legal consulting and lien resolution for plaintiff trial lawyers nationwide.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECOGNITION MARQUEE -->
+  <div style="background: var(--navy-deep); padding: 64px 0; overflow: hidden;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px;">
+      <div class="reveal" style="text-align: center; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6F7E95; margin-bottom: 36px;">National Recognition &amp; Affiliations</div>
+    </div>
+    <div class="reveal marquee-wrap">
+      <div class="marquee-fade left"></div>
+      <div class="marquee-fade right"></div>
+      <div class="marquee-track">
+        <div style="display: flex; align-items: center; gap: 64px; padding-right: 64px;">
+          <span style="font-family: 'Newsreader', Georgia, serif; font-size: 22px; color: #C8D1DE; white-space: nowrap;">The Wall Street Journal</span>
+          <span style="font-family: 'Newsreader', Georgia, serif; font-size: 22px; color: #C8D1DE; white-space: nowrap;">Des Moines Register</span>
+          <span style="font-family: 'Newsreader', Georgia, serif; font-size: 22px; color: #C8D1DE; white-space: nowrap;">Chicago Daily Law Bulletin</span>
+          <span style="font-size: 18px; font-weight: 600; letter-spacing: 0.02em; color: #C8D1DE; white-space: nowrap;">LexisNexis</span>
+          <span style="font-size: 18px; font-weight: 600; letter-spacing: 0.02em; color: #C8D1DE; white-space: nowrap;">The Florida Bar</span>
+          <span style="font-size: 18px; font-weight: 600; letter-spacing: 0.02em; color: #C8D1DE; white-space: nowrap;">American Association for Justice</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 64px; padding-right: 64px;" aria-hidden="true">
+          <span style="font-family: 'Newsreader', Georgia, serif; font-size: 22px; color: #C8D1DE; white-space: nowrap;">The Wall Street Journal</span>
+          <span style="font-family: 'Newsreader', Georgia, serif; font-size: 22px; color: #C8D1DE; white-space: nowrap;">Des Moines Register</span>
+          <span style="font-family: 'Newsreader', Georgia, serif; font-size: 22px; color: #C8D1DE; white-space: nowrap;">Chicago Daily Law Bulletin</span>
+          <span style="font-size: 18px; font-weight: 600; letter-spacing: 0.02em; color: #C8D1DE; white-space: nowrap;">LexisNexis</span>
+          <span style="font-size: 18px; font-weight: 600; letter-spacing: 0.02em; color: #C8D1DE; white-space: nowrap;">The Florida Bar</span>
+          <span style="font-size: 18px; font-weight: 600; letter-spacing: 0.02em; color: #C8D1DE; white-space: nowrap;">American Association for Justice</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERTISE -->
+  <div id="expertise" style="background: var(--ivory);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 120px 32px;">
+      <div class="reveal" style="max-width: 600px; margin-bottom: 64px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #8A6D3A; margin-bottom: 18px;">Where He Helps</div>
+        <h2 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(28px, 3.2vw, 38px); line-height: 1.2; color: var(--ink);">
+          Three decades of trial experience, now working for you three ways.
+        </h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 28px;">
+        <div class="reveal card-hover" style="background: #FFFFFF; border: 1px solid #E4DECE; border-radius: 2px; padding: 40px 32px;">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8A6D3A" stroke-width="1.6" aria-hidden="true" style="margin-bottom: 22px;"><path d="M4 21h16M6 21V9.5M18 21V9.5M4 9.5l8-6 8 6M9 21v-6h6v6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3 style="margin: 0 0 12px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 21px; color: var(--ink);">Trial Advocacy</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #5B6473;">Plaintiff personal injury representation from a lawyer who has argued from county courts to the U.S. Supreme Court.</p>
+        </div>
+        <div class="reveal card-hover" style="transition-delay: 0.1s; background: #FFFFFF; border: 1px solid #E4DECE; border-radius: 2px; padding: 40px 32px;">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8A6D3A" stroke-width="1.6" aria-hidden="true" style="margin-bottom: 22px;"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3 style="margin: 0 0 12px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 21px; color: var(--ink);">Legal Consulting &amp; Lien Resolution</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #5B6473;">Medicare, Medicare Advantage, ERISA, FEHBA, VA, TRICARE and Medicaid lien resolution for plaintiff trial lawyers, through Synergy.</p>
+        </div>
+        <div class="reveal card-hover" style="transition-delay: 0.2s; background: #FFFFFF; border: 1px solid #E4DECE; border-radius: 2px; padding: 40px 32px;">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8A6D3A" stroke-width="1.6" aria-hidden="true" style="margin-bottom: 22px;"><path d="M17 20v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2M10 10a4 4 0 100-8 4 4 0 000 8zM23 20v-2a4 4 0 00-3-3.87M16 4.13a4 4 0 010 7.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3 style="margin: 0 0 12px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 21px; color: var(--ink);">Strategic Partnerships &amp; Leadership</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #5B6473;">VP of Strategic Partnerships at Synergy and former CEO of a national advocacy organization, bringing a rare leadership vantage point to every engagement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPEAKING -->
+  <div id="speaking" style="background: var(--navy-deep);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 120px 32px;">
+      <div class="reveal" style="max-width: 640px; margin-bottom: 56px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px;">Speaking</div>
+        <h2 style="margin: 0 0 20px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(28px, 3.2vw, 38px); line-height: 1.2; color: #F3F6FA;">On trial advocacy, legal reform, and consumer protection.</h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #A9B6C9;">From courtroom strategy to the policy fights he led as CEO of HALT, Rodd speaks to legal, trade, and consumer audiences nationwide.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 24px; margin-bottom: 48px;">
+        <div class="reveal card-hover" style="border-radius: 2px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+          <img src="assets/rodd-4.jpeg" alt="Rodd Santomauro speaking at a podium, Hilton" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;">
+          <div style="padding: 14px 16px; background: var(--navy);"><div style="font-size: 12px; color: #8392A8;">Hilton &middot; [EVENT NAME]</div></div>
+        </div>
+        <div class="reveal card-hover" style="transition-delay: 0.08s; border-radius: 2px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+          <img src="assets/rodd-5.jpeg" alt="Rodd Santomauro speaking at a podium, Marriott Orlando" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;">
+          <div style="padding: 14px 16px; background: var(--navy);"><div style="font-size: 12px; color: #8392A8;">Marriott Orlando Airport Lakeside &middot; [EVENT NAME]</div></div>
+        </div>
+        <div class="reveal card-hover" style="transition-delay: 0.16s; border-radius: 2px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+          <img src="assets/rodd-6.jpeg" alt="Rodd Santomauro speaking at a podium, Sands Hotel &amp; Conference Center" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;">
+          <div style="padding: 14px 16px; background: var(--navy);"><div style="font-size: 12px; color: #8392A8;">Sands Hotel &amp; Conference Center &middot; [EVENT NAME]</div></div>
+        </div>
+        <div class="reveal card-hover" style="transition-delay: 0.24s; border-radius: 2px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+          <img src="assets/rodd-7.jpeg" alt="Rodd Santomauro conference speaker credential" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top center;">
+          <div style="padding: 14px 16px; background: var(--navy);"><div style="font-size: 12px; color: #8392A8;">Speaker &middot; Exhibitor &middot; Sponsor, [CONVENTION NAME]</div></div>
+        </div>
+      </div>
+
+      <a href="#contact" class="reveal nav-link btn-primary" style="background: var(--accent); color: #081326; font-weight: 700; font-size: 15px; padding: 15px 28px; border-radius: 2px;">Book Rodd to Speak</a>
+    </div>
+  </div>
+
+  <!-- WRITING -->
+  <div id="writing" style="background: var(--ivory);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 120px 32px;">
+      <div class="reveal" style="max-width: 640px; margin-bottom: 56px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #8A6D3A; margin-bottom: 18px;">Writing</div>
+        <h2 style="margin: 0 0 20px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(28px, 3.2vw, 38px); line-height: 1.2; color: var(--ink);">Published 19 times in legal publications nationwide.</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px;">
+        <div class="reveal card-hover" style="background: #FFFFFF; border: 1px solid #E4DECE; border-radius: 2px; padding: 32px;">
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8A6D3A; margin-bottom: 14px;">[PUBLICATION NAME]</div>
+          <h3 style="margin: 0 0 16px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 19px; color: var(--ink);">[Article title placeholder]</h3>
+          <a href="#" class="nav-link" style="font-size: 14px; font-weight: 700; color: #8A6D3A;">Read article →</a>
+        </div>
+        <div class="reveal card-hover" style="transition-delay: 0.08s; background: #FFFFFF; border: 1px solid #E4DECE; border-radius: 2px; padding: 32px;">
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8A6D3A; margin-bottom: 14px;">[PUBLICATION NAME]</div>
+          <h3 style="margin: 0 0 16px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 19px; color: var(--ink);">[Article title placeholder]</h3>
+          <a href="#" class="nav-link" style="font-size: 14px; font-weight: 700; color: #8A6D3A;">Read article →</a>
+        </div>
+        <div class="reveal card-hover" style="transition-delay: 0.16s; background: #FFFFFF; border: 1px solid #E4DECE; border-radius: 2px; padding: 32px;">
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8A6D3A; margin-bottom: 14px;">[PUBLICATION NAME]</div>
+          <h3 style="margin: 0 0 16px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 19px; color: var(--ink);">[Article title placeholder]</h3>
+          <a href="#" class="nav-link" style="font-size: 14px; font-weight: 700; color: #8A6D3A;">Read article →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS: TIMELINE -->
+  <div style="background: var(--navy);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 110px 32px;">
+      <div class="reveal" style="max-width: 600px; margin-bottom: 56px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px;">How It Works</div>
+        <h2 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(28px, 3.2vw, 38px); line-height: 1.2; color: #F3F6FA;">A direct conversation, start to finish.</h2>
+      </div>
+
+      <div style="position: relative; max-width: 720px;">
+        <div style="position: absolute; left: 17px; top: 17px; bottom: 17px; width: 1px; background: rgba(255,255,255,0.12);"></div>
+
+        <div class="reveal" style="display: flex; gap: 24px; padding-bottom: 48px;">
+          <div class="step-num" style="background: var(--navy);">1</div>
+          <div style="padding-top: 4px;">
+            <h4 style="margin: 0 0 8px; font-size: 17px; font-weight: 700; color: #F3F6FA;">Reach Out</h4>
+            <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #A9B6C9; max-width: 460px;">Send your case or request directly to Rodd, not a shared intake inbox.</p>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay: 0.1s; display: flex; gap: 24px; padding-bottom: 48px;">
+          <div class="step-num" style="background: var(--navy);">2</div>
+          <div style="padding-top: 4px;">
+            <h4 style="margin: 0 0 8px; font-size: 17px; font-weight: 700; color: #F3F6FA;">Review</h4>
+            <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #A9B6C9; max-width: 460px;">Rodd reviews the details himself before you ever get on a call.</p>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay: 0.2s; display: flex; gap: 24px; padding-bottom: 48px;">
+          <div class="step-num" style="background: var(--navy);">3</div>
+          <div style="padding-top: 4px;">
+            <h4 style="margin: 0 0 8px; font-size: 17px; font-weight: 700; color: #F3F6FA;">Talk It Through</h4>
+            <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #A9B6C9; max-width: 460px;">A direct, candid conversation about your case or engagement, and what it actually needs.</p>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay: 0.3s; display: flex; gap: 24px;">
+          <div class="step-num" style="background: var(--accent); color: #081326; border-color: var(--accent);">4</div>
+          <div style="padding-top: 4px;">
+            <h4 style="margin: 0 0 8px; font-size: 17px; font-weight: 700; color: #F3F6FA;">Next Steps</h4>
+            <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #A9B6C9; max-width: 460px;">Clear next steps, agreed on together, no handoff to someone you've never spoken to.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div id="contact" style="background: var(--ivory);">
+    <div style="max-width: 900px; margin: 0 auto; padding: 130px 32px; text-align: center;">
+      <h2 class="reveal" style="margin: 0 0 20px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(30px, 4vw, 44px); line-height: 1.15; color: var(--ink);">Let's talk about your case.</h2>
+      <p class="reveal" style="margin: 0 0 40px; font-size: 17px; line-height: 1.7; color: #5B6473;">A direct conversation with Rodd, not a firm intake form.</p>
+      <a href="mailto:[RODD'S EMAIL]" class="reveal btn-primary" style="background: var(--navy-deep); color: #F3F6FA; font-weight: 700; font-size: 15px; padding: 17px 34px; border-radius: 2px;">Schedule a Confidential Consultation</a>
+      <div class="reveal" style="margin-top: 22px; font-size: 14px; color: #8A93A3;">[PHONE PLACEHOLDER] &nbsp;&middot;&nbsp; [EMAIL PLACEHOLDER]</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="background: var(--navy-deep); border-top: 1px solid rgba(255,255,255,0.08); overflow: hidden;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 100px 32px 70px;">
+
+      <div class="reveal" style="margin-bottom: 56px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px;">Let's Work Together</div>
+        <h2 style="margin: 0 0 28px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.25; color: #F3F6FA; max-width: 640px;">Have a case, an engagement, or an event in mind? Let's talk.</h2>
+        <a href="mailto:[RODD'S EMAIL]" class="btn-primary" style="background: var(--accent); color: #081326; font-weight: 700; font-size: 15px; padding: 15px 28px; border-radius: 2px;">Get in Touch →</a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 40px; padding-top: 48px; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 72px;">
+        <div class="reveal">
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #5B6B82; margin-bottom: 18px;">Explore</div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="#about" class="nav-link" style="font-size: 14px; color: #C8D1DE; width: fit-content;">About</a>
+            <a href="#expertise" class="nav-link" style="font-size: 14px; color: #C8D1DE; width: fit-content;">Trial &amp; Consulting</a>
+            <a href="#speaking" class="nav-link" style="font-size: 14px; color: #C8D1DE; width: fit-content;">Speaking</a>
+            <a href="#writing" class="nav-link" style="font-size: 14px; color: #C8D1DE; width: fit-content;">Writing</a>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay: 0.08s;">
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #5B6B82; margin-bottom: 18px;">Connect</div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="https://www.linkedin.com/in/roddsantomauro" class="nav-link" style="font-size: 14px; color: #C8D1DE; width: fit-content;">LinkedIn</a>
+            <a href="mailto:[RODD'S EMAIL]" class="nav-link" style="font-size: 14px; color: #C8D1DE; width: fit-content;">[EMAIL PLACEHOLDER]</a>
+            <a href="tel:[RODD'S PHONE]" class="nav-link" style="font-size: 14px; color: #C8D1DE; width: fit-content;">[PHONE PLACEHOLDER]</a>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay: 0.16s;">
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #5B6B82; margin-bottom: 18px;">Currently</div>
+          <div style="font-size: 14px; color: #C8D1DE; line-height: 1.7;">VP, Strategic Partnerships<br>Synergy</div>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay: 0.2s; margin-bottom: 40px;">
+        <div class="footer-name">Rodd Santomauro<span style="color: var(--accent);">.</span></div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.08);">
+        <span style="font-size: 13px; color: #5B6B82;">Trial Lawyer &middot; Legal Consultant &middot; Author &middot; Speaker</span>
+        <span style="font-size: 13px; color: #44506A;">Design concept — not yet live</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    var root = document.getElementById('page-root');
+    if (!root) return;
+
+    if (typeof IntersectionObserver === 'undefined') return;
+
+    var els = root.querySelectorAll('.reveal');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    els.forEach(function (el) { io.observe(el); });
+
+    // Mark ready last: content is fully visible by default and only
+    // becomes scroll-triggered once this class is actually applied.
+    root.classList.add('js-ready');
+  })();
+</script>
+
+</body>
+</html>
